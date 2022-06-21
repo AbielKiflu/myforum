@@ -1,4 +1,4 @@
-import {NavBar,Login} from './components';
+import {NavBar,Register} from './components';
 import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
 import GlobalStyles from './globalStyle';
 import {Provider} from "react-redux";
@@ -14,7 +14,7 @@ function App() {
         <NavBar/>
 
       </Router>
-      <Login/>
+      <Register/>
     </Provider>
   );
 }
