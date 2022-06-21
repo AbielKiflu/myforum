@@ -1,6 +1,6 @@
 import React from 'react'
 import {Nav,NavBarContainer,NavLogo,NavIcon,MobileIcon,NavMenu,
-  NavItem,NavLink,Guest} from './NavBar.elements'
+  NavItem,NavLink} from './NavBar.elements'
 import { FaBars, FaTimes } from 'react-icons/fa';
 import {useDispatch,useSelector} from 'react-redux';
 import {changeHamburger,LoggedIn} from '../../redux/reducers/uiStateReducer'

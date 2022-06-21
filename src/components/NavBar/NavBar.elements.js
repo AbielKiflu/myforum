@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Container} from '../../globalStyle'
+import {Container} from '../../globalStyle';
 import {FaBookReader} from 'react-icons/fa';
 import {Link} from  'react-router-dom';
 

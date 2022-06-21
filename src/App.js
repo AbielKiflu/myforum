@@ -1,10 +1,10 @@
-import {NavBar} from './components';
+import {NavBar,Login} from './components';
 import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
 import GlobalStyles from './globalStyle';
 import {Provider} from "react-redux";
 import {store} from "./redux/store";
 
-
+ 
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
         <NavBar/>
 
       </Router>
+      <Login/>
     </Provider>
   );
 }

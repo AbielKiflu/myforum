@@ -18,7 +18,35 @@ z-index:1;
 width:100%;
 margin-right:auto;
 margin-left:auto;
+`;
 
+export const ColumnContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding:0.5rem;
+`;
+
+export const RowContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    padding:0.5rem;
+`;
+
+export const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 20%;
+  width: 100%;
+`;
+
+export const ButtonContainer = styled.div`
+  margin: 1rem 0 2rem 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 `;
 
 
