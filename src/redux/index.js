@@ -1,1 +1,1 @@
-export {default as uiStateSlice} from "./reducers/uiStateReducer";
+export {default as uiStateReducer} from "./reducers/uiStateReducer";

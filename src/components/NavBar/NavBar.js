@@ -1,19 +1,45 @@
 import React from 'react'
 import {Nav,NavBarContainer,NavLogo,NavIcon,MobileIcon,NavMenu,
-  NavItem} from './NavBar.elements'
+  NavItem,NavLink,Guest} from './NavBar.elements'
 import { FaBars, FaTimes } from 'react-icons/fa';
 import {useDispatch,useSelector} from 'react-redux';
-import {changeHamburger} from '../../redux/reducers/uiStateReducer'
+import {changeHamburger,LoggedIn} from '../../redux/reducers/uiStateReducer'
 
 
 const NavBar = () => {
   const dispatch = useDispatch();
-  const {hamburger}=useSelector((state) =>state.uiState);
+  const {hamburger,logged}=useSelector((state) =>state.uiState);
+
 
   const handleHamburger=(e)=>{
     dispatch(changeHamburger())
-    console.log(hamburger);
-  }
+    console.log(logged);
+    }
+
+    const menuItems=(logged)=>{
+      if(logged){
+        return (
+          <>
+              <NavItem>
+                <NavLink to="/logout">Logout</NavLink> 
+              </NavItem>
+          </>
+        );
+      }else{
+        return (
+          <>
+              <NavItem>
+                <NavLink to="/login">Login</NavLink> 
+              </NavItem>
+
+              <NavItem>
+                <NavLink to="/register">Register</NavLink> 
+            </NavItem>
+          </>
+        );
+      }
+
+    }
 
   return (
     <Nav>
@@ -23,20 +49,16 @@ const NavBar = () => {
           </NavLogo>
  
           <MobileIcon onClick={handleHamburger}>
-            {hamburger?<FaTimes/>:<FaBars/>}
+            {hamburger?<FaBars/>:<FaTimes/>}
           </MobileIcon>
 
-          <NavMenu>
-          <NavItem>
-             login 
-          </NavItem>
-          <NavItem>
-             Register 
-          </NavItem>
-          <NavItem>
-             Home 
-          </NavItem>
-        </NavMenu>
+
+          
+          <NavMenu onClick={handleHamburger} click={!hamburger} >
+              {menuItems(logged)}
+          </NavMenu>     
+
+ 
 
        
           

@@ -63,17 +63,18 @@ export const MobileIcon=styled.div`
 
 export const NavMenu=styled.ul`
     list-style:none;
-    display:flex;
+    display:${ ({click}) =>(click ? 'flex': 'none')};
     flex-direction:column;
     background:#082a3d;
     color:#fff;
-    font-size:1.5rem;
+    font-size:1.2rem;
     width:100%;
     gap:0.5rem;
     align-items:center;
     align-self:center;
     position:absolute;
     top:5rem;
+    padding-bottom:1rem;
 
   
 
@@ -86,6 +87,7 @@ export const NavMenu=styled.ul`
         gap:1rem;
         align-self:center;
         padding-right:1rem;
+        padding-bottom:0;
     }
 
 `;
@@ -96,4 +98,9 @@ export const NavItem=styled.li`
      &:hover{
         border-bottom:2px solid #fff;
      }
+`;
+
+export const NavLink=styled(Link)`
+    color:#fff;
+    text-decoration:none;
 `;

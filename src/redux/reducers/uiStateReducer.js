@@ -1,20 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const uiStateSlice = createSlice({
+const uiStateReducer = createSlice({
   name: 'uiState',
   initialState: {
-    hamburger:false
+    hamburger:true,
+    logged:false,
   },
 
   reducers: {
     changeHamburger(state, action) {
         state.hamburger=!state.hamburger;
     },
-     
+
+    LoggedIn(state, action) {
+      state.logged=!state.logged;
+  },
+ 
  
   }
 
 });
 
-export const { changeHamburger } = uiStateSlice.actions
-export default uiStateSlice.reducer
+export const { changeHamburger,LoggedIn } = uiStateReducer.actions
+export default uiStateReducer.reducer
