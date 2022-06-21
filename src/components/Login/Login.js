@@ -1,13 +1,13 @@
 import {Btn} from '../Button/Button.elements'
 import {Input} from './Login.elements'
-import {InputContainer,ButtonContainer,ColumnContainer} from '../../globalStyle';
+import {InputContainer,ButtonContainer} from '../../globalStyle';
  
 
 
 const Login = () => {
     return (
         <>
-            <ColumnContainer>
+ 
             <InputContainer>
                 <Input type="text" placeholder="Email" aria-label="email"/>
                 <Input type="password" placeholder="Password" aria-label="password"/>
@@ -16,7 +16,7 @@ const Login = () => {
             <ButtonContainer>
                 <Btn>Login</Btn>
             </ButtonContainer>
-            </ColumnContainer>
+ 
         </>
     );
 }

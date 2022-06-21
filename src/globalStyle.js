@@ -39,6 +39,7 @@ export const InputContainer = styled.div`
   align-items: center;
   height: 20%;
   width: 100%;
+
 `;
 
 export const ButtonContainer = styled.div`
@@ -49,9 +50,15 @@ export const ButtonContainer = styled.div`
   justify-content: flex-end;
 `;
 
+export const BodyContainer = styled.div`
+  display: flex;
+  width: 100%;
+  flex-wrap:wrap;
+ 
+`;
+
 export const MainContainer = styled.div`
   margin: 1rem 0 2rem 0;
-  width: 100%;
   display: flex;
   flex-direction: column;
 
@@ -62,10 +69,9 @@ export const MainContainer = styled.div`
 `;
 
 export const SideContainer = styled.div`
-  margin: 1rem 0 2rem 0;
-  width: 100%;
+  margin: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
 `;
 
 

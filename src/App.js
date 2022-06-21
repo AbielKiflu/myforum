@@ -1,4 +1,5 @@
-import {NavBar,Card} from './components';
+import {NavBar} from './components';
+import Guest from './pages/Guest/Guest';
 import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
 import GlobalStyles from './globalStyle';
 import {Provider} from "react-redux";
@@ -12,9 +13,9 @@ function App() {
       <Router>
         <GlobalStyles/>
         <NavBar/>
-
       </Router>
-      <Card/>
+          <Guest/>
+ 
     </Provider>
   );
 }
