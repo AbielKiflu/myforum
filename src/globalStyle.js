@@ -26,6 +26,10 @@ export const ColumnContainer = styled.div`
     padding:0.5rem;
 `;
 
+export const FormContainer = styled.div`
+  margin: 1rem;
+`;
+
 export const RowContainer = styled.div`
     display: flex;
     flex-direction: row;

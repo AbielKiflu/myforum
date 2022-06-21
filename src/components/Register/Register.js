@@ -1,13 +1,14 @@
 import {Btn} from '../Button/Button.elements'
 import {Input} from './Register.elements'
-import {InputContainer,ButtonContainer} from '../../globalStyle';
+import {InputContainer,ButtonContainer,FormContainer} from '../../globalStyle';
  
 
 
 const Register = () => {
     return (
-        <>
- 
+    <fieldset>
+    <legend>Register:</legend>
+    <FormContainer>
             <InputContainer>
                 <Input type="text" placeholder="Nick Name" aria-label="email"/>
                 <Input type="text" placeholder="Email" aria-label="email"/>
@@ -17,8 +18,8 @@ const Register = () => {
             <ButtonContainer>
                 <Btn>Register</Btn>
             </ButtonContainer>
- 
-        </>
+            </FormContainer>
+    </fieldset>
     );
 }
 
