@@ -49,6 +49,26 @@ export const ButtonContainer = styled.div`
   justify-content: flex-end;
 `;
 
+export const MainContainer = styled.div`
+  margin: 1rem 0 2rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+
+  @media only screen and (min-width: 700px) {
+        flex-direction: row;
+    }
+`;
+
+export const SideContainer = styled.div`
+  margin: 1rem 0 2rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+
 export const Card = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
