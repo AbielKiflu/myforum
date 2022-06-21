@@ -1,5 +1,5 @@
 import {NavBar} from './components';
-import Guest from './pages/Guest/Guest';
+import {Guest,Login,Register} from './pages';
 import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
 import GlobalStyles from './globalStyle';
 import {Provider} from "react-redux";
@@ -13,9 +13,14 @@ function App() {
       <Router>
         <GlobalStyles/>
         <NavBar/>
+
+        <Routes>
+            <Route path="/" element={ <Guest/>}/>
+            <Route path="/login" element={ <Login/>}/>
+            <Route path="/register" element={ <Register/>}/>
+          </Routes>
+
       </Router>
-          <Guest/>
- 
     </Provider>
   );
 }
