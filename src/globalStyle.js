@@ -80,15 +80,20 @@ export const SideContainer = styled.div`
 
 
 export const Card = styled.div`
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
   transition: 0.3s;
-  margin:0.2rem;
+  margin:0.4rem;
   padding:0.2rem;
-  width: 40%;
+  max-width: 20rem;
+  max-height:20rem;
   border-radius: 5px;
+  display: flex;
+  flex:1 1 auto;
+  flex-direction: column;
+  align-self:normal;
 
 &:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
 }
 `;
 
