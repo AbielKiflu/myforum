@@ -12,6 +12,7 @@ const Register = () => {
             <InputContainer>
                 <Input type="text" placeholder="Nick Name" aria-label="email"/>
                 <Input type="text" placeholder="Email" aria-label="email"/>
+                <Input type="text" placeholder="Signiture" aria-label="Signiture"/>
                 <Input type="password" placeholder="Password" aria-label="password"/>
             </InputContainer>
 

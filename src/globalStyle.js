@@ -28,6 +28,9 @@ export const ColumnContainer = styled.div`
 
 export const FormContainer = styled.div`
   margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  max-width:20rem;
 `;
 
 export const RowContainer = styled.div`
@@ -66,7 +69,6 @@ export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-
   @media only screen and (min-width: 700px) {
         flex-direction: row;
     }
@@ -88,6 +90,7 @@ export const Card = styled.div`
   max-height:20rem;
   border-radius: 5px;
   display: flex;
+  justify-content: center;
   flex:1 1 auto;
   flex-direction: column;
   align-self:normal;

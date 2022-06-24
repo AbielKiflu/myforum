@@ -9,6 +9,9 @@ function Guest() {
           <Card/>
           <Card/>
           <Card/>
+          <Card/>
+          <Card/>
+          <Card/>
         </BodyContainer>
         <SideContainer>
           <Login/>

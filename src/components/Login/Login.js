@@ -5,18 +5,28 @@ import {InputContainer,ButtonContainer,FormContainer} from '../../globalStyle';
 
 
 const Login = () => {
-    return (
-  <fieldset>
+
+const loginHandler=(e)=>{
+     
+}
+
+
+
+
+return (
+          <fieldset>
     <legend>Login:</legend>
             <FormContainer>
-            <InputContainer>
+                <form>
+                <InputContainer>
                 <Input type="text" placeholder="Email" aria-label="email"/>
                 <Input type="password" placeholder="Password" aria-label="password"/>
             </InputContainer>
 
             <ButtonContainer>
-                <Btn>Login</Btn>
+                <Btn onClick={loginHandler}>Login</Btn>
             </ButtonContainer>
+                </form>
             </FormContainer>
             
     </fieldset>

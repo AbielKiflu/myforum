@@ -2,11 +2,12 @@ import React from 'react';
 import {Btn} from './Button.elements'
 
  
+ 
 
 
-const Button = ({name,onclick}) => {
+const Button = () => {
 
-    return <Btn onClick={onclick}>{name}</Btn>;
+    return <Btn></Btn>;
 }
 
 /* 
