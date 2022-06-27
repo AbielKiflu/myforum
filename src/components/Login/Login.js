@@ -31,7 +31,8 @@ const Login = () => {
         .then((response)=>{
           // the cookie is contained in response.data
           dispatch(LoggedIn(true))
-          navigate('/')
+          //navigate('/')
+          console.log(response.data);
         })
       .catch(function(error){
         // login failed
@@ -43,9 +44,6 @@ const Login = () => {
 
     })
 
-     axios.get(url+'/api/user').then((response)=>{
-        console.log(response.data);
-     });
 
   
   }
