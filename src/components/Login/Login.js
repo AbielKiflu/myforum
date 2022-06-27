@@ -5,12 +5,14 @@ import axios from 'axios';
 import {useNavigate} from "react-router-dom";
 import {useDispatch,useSelector} from 'react-redux';
 import {LoggedIn} from '../../redux/reducers/uiStateReducer'
-
+import React from "react";
 
 const Login = () => {
   const url = 'http://localhost:8000';
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const navigate = useNavigate();
 
 
     const {logged}=useSelector((state) =>state.uiState);
@@ -23,8 +25,8 @@ const Login = () => {
             method:'post',
             url:url+'/api/login',
             data:{
-                'email':'raphael.kezzou@live.fr',
-                'password':'password'
+                'email':email,
+                'password':password
             },
 
         })
@@ -39,13 +41,7 @@ const Login = () => {
           console.log("error: " + error);
           dispatch(LoggedIn(false))
       })
-        
-
-
-    })
-
-
-  
+    })  
   }
 
 
@@ -64,8 +60,8 @@ return (
             <FormContainer>
                
                 <InputContainer>
-                <Input type="text" placeholder="Email" aria-label="email"/>
-                <Input type="password" placeholder="Password" aria-label="password"/>
+                <Input type="text" placeholder="Email" aria-label="email" onChange={e => setEmail(e.target.value)}/>
+                <Input type="password" placeholder="Password" aria-label="password" onChange={e => setPassword(e.target.value)}/>
             </InputContainer>
 
             <ButtonContainer>
