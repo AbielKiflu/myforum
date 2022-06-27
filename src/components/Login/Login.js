@@ -1,14 +1,61 @@
 import {Btn} from '../Button/Button.elements'
 import {Input} from './Login.elements'
 import {InputContainer,ButtonContainer,FormContainer} from '../../globalStyle';
- 
+import axios from 'axios';
+import {useNavigate} from "react-router-dom";
+import {useDispatch,useSelector} from 'react-redux';
+import {LoggedIn} from '../../redux/reducers/uiStateReducer'
 
 
 const Login = () => {
+  const url = 'http://localhost:8000';
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
 
-const loginHandler=(e)=>{
-     
-}
+
+    const {logged}=useSelector((state) =>state.uiState);
+
+    // login
+    const loginHandler=(e)=>{
+      axios.get(url+'/sanctum/csrf-cookie')
+      .then(() => {
+        axios({
+            method:'post',
+            url:url+'/api/login',
+            data:{
+                'email':'raphael.kezzou@live.fr',
+                'password':'password'
+            },
+
+        })
+        .then((response)=>{
+          // the cookie is contained in response.data
+          dispatch(LoggedIn(true))
+          navigate('/')
+        })
+      .catch(function(error){
+        // login failed
+          console.log("error: " + error);
+          dispatch(LoggedIn(false))
+      })
+        
+
+
+    })
+
+     axios.get(url+'/api/user').then((response)=>{
+        console.log(response.data);
+     });
+
+  
+  }
+
+
+ 
+
+
+  
+
 
 
 
@@ -17,7 +64,7 @@ return (
           <fieldset>
     <legend>Login:</legend>
             <FormContainer>
-                <form>
+               
                 <InputContainer>
                 <Input type="text" placeholder="Email" aria-label="email"/>
                 <Input type="password" placeholder="Password" aria-label="password"/>
@@ -26,7 +73,7 @@ return (
             <ButtonContainer>
                 <Btn onClick={loginHandler}>Login</Btn>
             </ButtonContainer>
-                </form>
+                 
             </FormContainer>
             
     </fieldset>

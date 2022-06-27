@@ -1,9 +1,12 @@
 import {NavBar} from './components';
-import {Guest,Login,Register} from './pages';
+import {Guest,Login,Register,Logout} from './pages';
 import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
 import GlobalStyles from './globalStyle';
 import {Provider} from "react-redux";
 import {store} from "./redux/store";
+import axios from 'axios';
+
+axios.defaults.withCredentials = true;
 
  
 
@@ -17,6 +20,7 @@ function App() {
         <Routes>
             <Route path="/" element={ <Guest/>}/>
             <Route path="/login" element={ <Login/>}/>
+            <Route path="/logout" element={ <Logout/>}/>
             <Route path="/register" element={ <Register/>}/>
           </Routes>
 

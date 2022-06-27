@@ -13,7 +13,7 @@ const NavBar = () => {
 
   const handleHamburger=(e)=>{
     dispatch(changeHamburger())
-    console.log(logged);
+    
     }
 
     const menuItems=(logged)=>{
