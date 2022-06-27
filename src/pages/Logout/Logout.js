@@ -15,11 +15,7 @@ const Logout = (props) => {
       axios({
           method:'get',
           url:'http://localhost:8000/api/logout',
-          headers:{
-              'Access-Control-Allow-Origin': '*', 
-              withCredentials:true,
-              'Content-Type': 'application/json',
-          }
+       
       })
       .then(response => {
         dispatch(LoggedIn(false));

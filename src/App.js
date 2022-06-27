@@ -1,5 +1,5 @@
 import {NavBar} from './components';
-import {Guest,Login,Register,Logout} from './pages';
+import {Guest,Login,Register,Logout,Boards} from './pages';
 import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
 import GlobalStyles from './globalStyle';
 import {Provider} from "react-redux";
@@ -22,6 +22,7 @@ function App() {
             <Route path="/login" element={ <Login/>}/>
             <Route path="/logout" element={ <Logout/>}/>
             <Route path="/register" element={ <Register/>}/>
+            <Route path="/boards" element={ <Boards/>}/>
           </Routes>
 
       </Router>
