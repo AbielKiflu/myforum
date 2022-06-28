@@ -2,18 +2,19 @@ import {Btn} from '../Button/Button.elements'
 import {Input} from './Login.elements'
 import {InputContainer,ButtonContainer,FormContainer} from '../../globalStyle';
 import axios from 'axios';
-import {useNavigate} from "react-router-dom";
-import {useDispatch,useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {LoggedIn} from '../../redux/reducers/uiStateReducer'
-
+import React from "react";
 
 const Login = () => {
   const url = 'http://localhost:8000';
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  //const navigate = useNavigate();
 
 
-    const {logged}=useSelector((state) =>state.uiState);
+    //const {logged}=useSelector((state) =>state.uiState);
 
     // login
     const loginHandler=(e)=>{
@@ -23,8 +24,8 @@ const Login = () => {
             method:'post',
             url:url+'/api/login',
             data:{
-                'email':'raphael.kezzou@live.fr',
-                'password':'password'
+                'email':email,
+                'password':password
             },
 
         })
@@ -38,13 +39,7 @@ const Login = () => {
           console.log("error: " + error);
           dispatch(LoggedIn(false))
       })
-        
-
-
-    })
-
-
-  
+    })  
   }
 
 
@@ -58,21 +53,20 @@ const Login = () => {
 
 
 return (
-          <fieldset>
+    <fieldset>
     <legend>Login:</legend>
-            <FormContainer>
-               
-                <InputContainer>
-                <Input type="text" placeholder="Email" aria-label="email"/>
-                <Input type="password" placeholder="Password" aria-label="password"/>
-            </InputContainer>
+      <FormContainer>
+          
+      <InputContainer>
+          <Input type="text" placeholder="Email" aria-label="email" onChange={e => setEmail(e.target.value)}/>
+          <Input type="password" placeholder="Password" aria-label="password" onChange={e => setPassword(e.target.value)}/>
+      </InputContainer>
 
-            <ButtonContainer>
-                <Btn onClick={loginHandler}>Login</Btn>
-            </ButtonContainer>
-                 
-            </FormContainer>
+      <ButtonContainer>
+          <Btn onClick={loginHandler}>Login</Btn>
+      </ButtonContainer>
             
+      </FormContainer>    
     </fieldset>
     );
 }
