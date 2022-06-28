@@ -32,8 +32,7 @@ const Login = () => {
         .then((response)=>{
           // the cookie is contained in response.data
           dispatch(LoggedIn(true))
-          //navigate('/')
-          console.log(response.data);
+          navigate('/')
         })
       .catch(function(error){
         // login failed
