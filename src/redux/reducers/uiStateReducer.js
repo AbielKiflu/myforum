@@ -13,7 +13,8 @@ const uiStateReducer = createSlice({
     },
 
     LoggedIn(state, action) {
-      state.logged=!state.logged;
+      state.logged=action.payload;
+ 
   },
  
  

@@ -3,7 +3,7 @@ import {Nav,NavBarContainer,NavLogo,NavIcon,MobileIcon,NavMenu,
   NavItem,NavLink} from './NavBar.elements'
 import { FaBars, FaTimes } from 'react-icons/fa';
 import {useDispatch,useSelector} from 'react-redux';
-import {changeHamburger,LoggedIn} from '../../redux/reducers/uiStateReducer'
+import {changeHamburger} from '../../redux/reducers/uiStateReducer'
 
 
 const NavBar = () => {
@@ -13,16 +13,19 @@ const NavBar = () => {
 
   const handleHamburger=(e)=>{
     dispatch(changeHamburger())
-    console.log(logged);
+    
     }
 
     const menuItems=(logged)=>{
       if(logged){
         return (
-          <>
-              <NavItem>
-                <NavLink to="/logout">Logout</NavLink> 
-              </NavItem>
+          <>  
+            <NavItem>
+              <NavLink to="/profile">Profile</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to="/logout">Logout</NavLink> 
+            </NavItem>
           </>
         );
       }else{
