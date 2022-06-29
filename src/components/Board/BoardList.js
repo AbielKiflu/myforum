@@ -1,6 +1,7 @@
 import React from "react";
 import axios from 'axios';
- 
+import {Card} from '../../globalStyle';
+import {Title,Body,Forum,Topic} from './Board.elements';
  
 
 const BoardList = ({board}) => {
@@ -15,8 +16,11 @@ const BoardList = ({board}) => {
          })
          .then(response => {
             setBoardInfo(response.data);
-             
+          
       
+         })
+         .catch(error => {
+            console.log(error);
          })
           
    
@@ -25,10 +29,20 @@ const BoardList = ({board}) => {
 
 
     return (
-         <>
-            <p>         forum: {boardInfo.forum} topic: {boardInfo.topic}</p>
-         </>
-    );
+        <Card key={board.board_id}>
+        <Title>  {board.description}</Title>
+        <Body>
+            <Forum>
+                <h3>Forum</h3>
+                <p>{boardInfo.forum}</p>
+            </Forum>
+            <Topic>
+                <h3>Topic</h3>
+                <p>{boardInfo.topic}</p>
+            </Topic>
+        </Body>
+    </Card>   
+        )
      
 }
 

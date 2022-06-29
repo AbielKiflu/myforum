@@ -1,6 +1,10 @@
 import axios from 'axios';
 import React,{useEffect,useState} from 'react';
 import {BoardList} from '../../components';
+import {MainContainer,BodyContainer} from '../../globalStyle';
+
+
+
 
 function Boards() {
   const [boards, setBoards] = useState([]);
@@ -14,18 +18,27 @@ function Boards() {
   })
   .then(response => {
      setBoards(response.data);
-     console.log(response.data);
+
   })
   .catch(error => console.error(error));    
   },[]);
 
+ 
+
   return (
-    <>
+    <div>
+         
+
      {boards.map((board) =>{
-      //return ( board.board_id+" Boards");
-      return( <BoardList key={board.board_id} board={board}/>);
+
+      return( 
+        <BoardList key={board.board_id} board={board}/>
+     
+             
+      );
      })}
-    </>
+       
+    </div>
 
   );
 }

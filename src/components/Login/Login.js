@@ -2,9 +2,11 @@ import {Btn} from '../Button/Button.elements'
 import {Input} from './Login.elements'
 import {InputContainer,ButtonContainer,FormContainer} from '../../globalStyle';
 import axios from 'axios';
-import {useDispatch} from 'react-redux';
-import {LoggedIn} from '../../redux/reducers/uiStateReducer'
+import {useNavigate} from "react-router-dom";
+import {useDispatch,useSelector} from 'react-redux';
+import {LoggedIn} from '../../redux/reducers/uiStateReducer';
 import React from "react";
+
 
 const Login = () => {
   const url = 'http://localhost:8000';
@@ -15,6 +17,10 @@ const Login = () => {
 
 
     //const {logged}=useSelector((state) =>state.uiState);
+
+ 
+
+
 
     // login
     const loginHandler=(e)=>{
