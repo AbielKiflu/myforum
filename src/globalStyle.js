@@ -61,7 +61,7 @@ export const MainContainerBodyContainer = styled.div`
   display: flex;
   width: 100%;
   flex-wrap:wrap;
- 
+  flex-direction: column;
 `;
 
 export const MainContainer = styled.div`

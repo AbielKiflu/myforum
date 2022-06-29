@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React,{useEffect,useState} from 'react';
 import {BoardList} from '../../components';
-import {MainContainer,BodyContainer} from '../../globalStyle';
 
 
 
@@ -32,9 +31,7 @@ function Boards() {
      {boards.map((board) =>{
 
       return( 
-        <BoardList key={board.board_id} board={board}/>
-     
-             
+        <BoardList key={board.board_id} board={board}/>     
       );
      })}
        
@@ -42,5 +39,4 @@ function Boards() {
 
   );
 }
-
 export default Boards;

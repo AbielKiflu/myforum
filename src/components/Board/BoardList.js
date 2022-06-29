@@ -1,23 +1,21 @@
 import React from "react";
 import axios from 'axios';
 import {Card} from '../../globalStyle';
-import {Title,Body,Forum,Topic} from './Board.elements';
- 
+import {Title} from './Board.elements';
+import ForumList from "../Forum/ForumList";
 
 const BoardList = ({board}) => {
-    const [boardInfo,setBoardInfo]= React.useState([]);
+    const [forums,setForums]= React.useState([]);
     //const boardInfo = React.useRef([]);
     
     React.useEffect(() => {
         axios({
              method:'get',
-             url:'http://localhost:8000/api/boardinfo/'+board.board_id,
+             url:'http://localhost:8000/api/board/'+board.board_id+"/forums",
           
          })
          .then(response => {
-            setBoardInfo(response.data);
-          
-      
+            setForums(response.data);
          })
          .catch(error => {
             console.log(error);
@@ -26,22 +24,17 @@ const BoardList = ({board}) => {
    
    
      }, []);
-
-
     return (
-        <Card key={board.board_id}>
+    <>        
         <Title>  {board.description}</Title>
-        <Body>
-            <Forum>
-                <h3>Forum</h3>
-                <p>{boardInfo.forum}</p>
-            </Forum>
-            <Topic>
-                <h3>Topic</h3>
-                <p>{boardInfo.topic}</p>
-            </Topic>
-        </Body>
-    </Card>   
+        <div>
+         {forums.map((forum) =>{
+          return( 
+            <ForumList key={forum.forum_id} forum={forum}/>     
+          );
+         })}
+        </div>
+    </>
     );
      
 }
