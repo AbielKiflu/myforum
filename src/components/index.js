@@ -4,6 +4,8 @@ export {default as Login} from "./Login/Login";
 export {default as Register} from "./Register/Register";
 export {default as Card} from "./Board/Board";
 export {default as BoardList} from "./Board/BoardList";
+export{default as Profile} from "./Profile/Profile";
+
 
 
 

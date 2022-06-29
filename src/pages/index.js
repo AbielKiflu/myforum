@@ -5,3 +5,5 @@ export {default as Login} from "./Login/Login";
 export {default as Register} from "./Register/Register";
 export {default as Logout} from "./Logout/Logout";
 export {default as Boards} from "./Boards/Boards";
+export {default as Profile} from "./Profile/Profile";
+
