@@ -42,7 +42,7 @@ const BoardList = ({board}) => {
             </Topic>
         </Body>
     </Card>   
-        )
+    );
      
 }
 
