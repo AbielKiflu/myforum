@@ -57,7 +57,7 @@ export const ButtonContainer = styled.div`
   justify-content: flex-end;
 `;
 
-export const BodyContainer = styled.div`
+export const MainContainerBodyContainer = styled.div`
   display: flex;
   width: 100%;
   flex-wrap:wrap;
