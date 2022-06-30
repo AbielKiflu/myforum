@@ -1,7 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import {Card} from '../../globalStyle';
-import {Title,Body,Post,Topic} from './Forum.elements';
+import {Title,Body,Post,Topic,NavLink} from './Forum.elements';
  
 
 const ForumList = ({forum}) => {
@@ -23,7 +23,7 @@ const ForumList = ({forum}) => {
 
     return (
         <Card key={forum.forum_id}>
-        <Title>  {forum.title}</Title>
+        <Title> <NavLink to={'/forum/'+forum.forum_id} >  {forum.title}</NavLink></Title>
         <Body>
             <Topic>
                 <h3>Topics</h3>

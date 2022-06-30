@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
  
 
-export const Title=styled.h1`
+export const Title=styled.h3`
     width:100%;
-    text-align:center;
-    margin-top:1rem;
+    text-align:left;
+    margin:0 0.3rem;
 `;
 
  

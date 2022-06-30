@@ -1,8 +1,12 @@
 import {MainContainer,SideContainer,BodyContainer} from '../../globalStyle';
-import {Login,Register,Card} from '../../components'
+import {Login,Register} from '../../components'
 import Boards from '../Boards/Boards'
+ 
 
 function Guest() {
+  
+ 
+
   return (
   <MainContainer>
     <BodyContainer>

@@ -1,9 +1,9 @@
 import React from "react";
 import axios from 'axios';
-import {Card} from '../../globalStyle';
+import {BodyContainer} from '../../globalStyle';
 import {Title} from './Board.elements';
 import ForumList from "../Forum/ForumList";
-
+ 
 const BoardList = ({board}) => {
     const [forums,setForums]= React.useState([]);
     //const boardInfo = React.useRef([]);
@@ -27,13 +27,13 @@ const BoardList = ({board}) => {
     return (
     <>        
         <Title>  {board.description}</Title>
-        <div>
+        <BodyContainer>
          {forums.map((forum) =>{
           return( 
             <ForumList key={forum.forum_id} forum={forum}/>     
           );
          })}
-        </div>
+        </BodyContainer>
     </>
     );
      
