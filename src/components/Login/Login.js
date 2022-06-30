@@ -31,6 +31,8 @@ const Login = () => {
       .then((response)=>{
         // the cookie is contained in response.data
         dispatch(LoggedIn("true"))
+        console.log(response.data.id);
+        localStorage.setItem("user_id",response.data.id);
         navigate("/")
       })
       .catch(function(error){

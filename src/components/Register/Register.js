@@ -29,7 +29,7 @@ const Register = () => {
         })
         .then(response => {
             dispatch(LoggedIn("true"));
-            console.log(response.data.message);
+            localStorage.setItem("user_id",response.data.id);
             navigate("/");
         })
         .catch(function(error){
