@@ -5,7 +5,6 @@ import {InputContainer,ButtonContainer,FormContainer} from '../../globalStyle';
 import React from 'react';
 import axios from 'axios';
 const Profile = () => {
-  console.log(document.cookie);
   const url = 'http://localhost:8000';
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');

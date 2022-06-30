@@ -23,14 +23,14 @@ function Forum() {
     .catch(error => console.error(error)); 
   },[]);
   const menuItems=(logged)=>{
-    if(logged){
+    if(logged === "true"){
       return (
         <Link to={'/NewTopic/'+id.id} > Add a topic</Link>
       );
     }
   }
   const menuItemsLogin=(logged)=>{
-    if(!logged){
+    if(logged === "false"){
       return (
         <SideContainer>
           <Login/>

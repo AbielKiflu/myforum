@@ -3,7 +3,7 @@ import {Input} from './Login.elements'
 import {InputContainer,ButtonContainer,FormContainer} from '../../globalStyle';
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
-import {useDispatch,useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {LoggedIn} from '../../redux/reducers/uiStateReducer';
 import React from "react";
 
