@@ -1,6 +1,6 @@
 import React from "react";
 import {Card} from '../../globalStyle';
-import {Title,Body,Post,Topic,NavLink} from './Topic.elements';
+import {Title} from './Topic.elements';
  
 
 const TopicList = ({topic}) => {

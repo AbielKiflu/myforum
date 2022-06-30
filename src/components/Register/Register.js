@@ -30,7 +30,7 @@ const Register = () => {
         .then(response => {
             dispatch(LoggedIn(true));
             console.log(response.data.message);
-            navigate("/boards");
+            navigate("/");
         })
         .catch(function(error){
             console.log("error: " + error);

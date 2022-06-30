@@ -15,51 +15,35 @@ const Login = () => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   //const navigate = useNavigate();
-
-
-    //const {logged}=useSelector((state) =>state.uiState);
-
- 
-
-
-
-    // login
-    const loginHandler=(e)=>{
-      axios.get(url+'/sanctum/csrf-cookie')
-      .then(() => {
-        axios({
-            method:'post',
-            url:url+'/api/login',
-            data:{
-                'email':email,
-                'password':password
-            },
-
-        })
-        .then((response)=>{
-          // the cookie is contained in response.data
-          dispatch(LoggedIn(true))
-          navigate('/')
-        })
+  //const {logged}=useSelector((state) =>state.uiState);
+  // login
+  const loginHandler=(e)=>{
+    axios.get(url+'/sanctum/csrf-cookie')
+    .then(() => {
+      axios({
+        method:'post',
+        url:url+'/api/login',
+        data:{
+              'email':email,
+              'password':password
+        },
+      })
+      .then((response)=>{
+        // the cookie is contained in response.data
+        dispatch(LoggedIn(true))
+        navigate("/")
+      })
       .catch(function(error){
         // login failed
-          console.log("error: " + error);
-          dispatch(LoggedIn(false))
+        console.log("error: " + error);
+        dispatch(LoggedIn(false))
       })
+    })
+    .catch(function(error){
+      console.log("error: " + error);
     })  
   }
-
-
- 
-
-
-  
-
-
-
-
-
-return (
+  return (
     <fieldset>
     <legend>Login:</legend>
       <FormContainer>
@@ -75,7 +59,7 @@ return (
             
       </FormContainer>    
     </fieldset>
-    );
+  );
 }
 
 /* 

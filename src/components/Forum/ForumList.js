@@ -23,7 +23,7 @@ const ForumList = ({forum}) => {
 
     return (
         <Card key={forum.forum_id}>
-        <Title> <NavLink to={'/forum/'+forum.forum_id} >  {forum.title}</NavLink></Title>
+        <Title> <NavLink to={'/forum/'+forum.forum_id+"/"+forum.title+"/"+forum.description} >  {forum.title}</NavLink></Title>
         <Body>
             <Topic>
                 <h3>Topics</h3>
