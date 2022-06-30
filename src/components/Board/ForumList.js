@@ -5,11 +5,12 @@ import {Title,Body,Forum,Topic} from './Board.elements';
 import {Link} from  'react-router-dom';
  
 
-const BoardList = ({board}) => {
+const ForumList = ({board}) => {
     const [boardInfo,setBoardInfo]= React.useState([]);
     //const boardInfo = React.useRef([]);
     
     React.useEffect(() => {
+       
         axios({
              method:'get',
              url:'http://localhost:8000/api/boardinfo/'+board.board_id,
@@ -48,4 +49,4 @@ const BoardList = ({board}) => {
 }
 
  
-export default BoardList;
+export default ForumList;

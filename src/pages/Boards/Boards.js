@@ -1,8 +1,7 @@
 import axios from 'axios';
 import React,{useEffect,useState} from 'react';
 import {BoardList} from '../../components';
-import {MainContainer,BodyContainer} from '../../globalStyle';
-
+import './boards.scss';
 
 
 
@@ -26,15 +25,10 @@ function Boards() {
  
 
   return (
-    <div>
-         
-
-     {boards.map((board) =>{
-
+    <div className="wrapper">
+        {boards.map((board) =>{
       return( 
         <BoardList key={board.board_id} board={board}/>
-     
-             
       );
      })}
        
