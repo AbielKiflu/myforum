@@ -16,7 +16,7 @@ const Logout = (props) => {
        
       })
       .then(response => {
-        dispatch(LoggedIn(false));
+        dispatch(LoggedIn("false"));
         setUser(response.data);
       })
       .catch(error => console.error(error));    

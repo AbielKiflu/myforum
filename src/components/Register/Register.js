@@ -28,7 +28,7 @@ const Register = () => {
             }          
         })
         .then(response => {
-            dispatch(LoggedIn(true));
+            dispatch(LoggedIn("true"));
             console.log(response.data.message);
             navigate("/");
         })

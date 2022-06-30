@@ -30,13 +30,13 @@ const Login = () => {
       })
       .then((response)=>{
         // the cookie is contained in response.data
-        dispatch(LoggedIn(true))
+        dispatch(LoggedIn("true"))
         navigate("/")
       })
       .catch(function(error){
         // login failed
         console.log("error: " + error);
-        dispatch(LoggedIn(false))
+        dispatch(LoggedIn("false"))
       })
     })
     .catch(function(error){

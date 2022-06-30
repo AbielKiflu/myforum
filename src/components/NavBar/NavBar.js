@@ -9,7 +9,7 @@ import {changeHamburger} from '../../redux/reducers/uiStateReducer'
 const NavBar = () => {
   const dispatch = useDispatch();
   const {hamburger,logged}=useSelector((state) =>state.uiState);
-
+  console.log(logged);
 
   const handleHamburger=(e)=>{
     dispatch(changeHamburger())
@@ -17,7 +17,7 @@ const NavBar = () => {
     }
 
     const menuItems=(logged)=>{
-      if(logged){
+      if(logged == "true"){
         return (
           <>  
             <NavItem>
