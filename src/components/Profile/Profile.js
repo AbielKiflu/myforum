@@ -1,15 +1,18 @@
-import {Btn} from '../Button/Button.elements'
-import {Input} from '../Login/Login.elements'
+import { useNavigate } from 'react-router-dom';
+import {Btn} from '../Button/Button.elements';
+import {Input} from '../Login/Login.elements';
 import {InputContainer,ButtonContainer,FormContainer} from '../../globalStyle';
 import React from 'react';
 import axios from 'axios';
 const Profile = () => {
+  console.log(document.cookie);
   const url = 'http://localhost:8000';
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [nickname, setNickname] = React.useState('');
   const [signature,setSignature] = React.useState('');
   const [id,setId] = React.useState('');
+  const navigate = useNavigate();
   React.useEffect(() => {
     axios({
     method: 'get',
@@ -40,6 +43,7 @@ const Profile = () => {
     })
     .then((response)=>{
       console.log(response.data);
+      navigate('/');
     })
     .catch(function(error){
       console.log("error: " + error);

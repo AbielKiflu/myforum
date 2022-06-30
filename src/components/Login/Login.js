@@ -2,19 +2,26 @@ import {Btn} from '../Button/Button.elements'
 import {Input} from './Login.elements'
 import {InputContainer,ButtonContainer,FormContainer} from '../../globalStyle';
 import axios from 'axios';
-import {useDispatch} from 'react-redux';
-import {LoggedIn} from '../../redux/reducers/uiStateReducer'
+import {useNavigate} from "react-router-dom";
+import {useDispatch,useSelector} from 'react-redux';
+import {LoggedIn} from '../../redux/reducers/uiStateReducer';
 import React from "react";
+
 
 const Login = () => {
   const url = 'http://localhost:8000';
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   //const navigate = useNavigate();
 
 
     //const {logged}=useSelector((state) =>state.uiState);
+
+ 
+
+
 
     // login
     const loginHandler=(e)=>{
@@ -32,8 +39,7 @@ const Login = () => {
         .then((response)=>{
           // the cookie is contained in response.data
           dispatch(LoggedIn(true))
-          //navigate('/')
-          console.log(response.data);
+          navigate('/')
         })
       .catch(function(error){
         // login failed
