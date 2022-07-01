@@ -5,7 +5,8 @@ import styled from 'styled-components';
 export const Title=styled.h3`
     width:100%;
     text-align:left;
-    margin:0 0.3rem;
+    margin-left:0.3rem;
+    margin-top:1rem;
 `;
 
  
