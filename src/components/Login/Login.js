@@ -3,7 +3,7 @@ import {Input} from './Login.elements'
 import {InputContainer,ButtonContainer,FormContainer} from '../../globalStyle';
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
-import {useDispatch,useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {LoggedIn} from '../../redux/reducers/uiStateReducer';
 import React from "react";
 
@@ -15,51 +15,37 @@ const Login = () => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   //const navigate = useNavigate();
-
-
-    //const {logged}=useSelector((state) =>state.uiState);
-
- 
-
-
-
-    // login
-    const loginHandler=(e)=>{
-      axios.get(url+'/sanctum/csrf-cookie')
-      .then(() => {
-        axios({
-            method:'post',
-            url:url+'/api/login',
-            data:{
-                'email':email,
-                'password':password
-            },
-
-        })
-        .then((response)=>{
-          // the cookie is contained in response.data
-          dispatch(LoggedIn(true))
-          navigate('/')
-        })
+  //const {logged}=useSelector((state) =>state.uiState);
+  // login
+  const loginHandler=(e)=>{
+    axios.get(url+'/sanctum/csrf-cookie')
+    .then(() => {
+      axios({
+        method:'post',
+        url:url+'/api/login',
+        data:{
+              'email':email,
+              'password':password
+        },
+      })
+      .then((response)=>{
+        // the cookie is contained in response.data
+        dispatch(LoggedIn("true"))
+        console.log(response.data.id);
+        localStorage.setItem("user_id",response.data.id);
+        navigate("/")
+      })
       .catch(function(error){
         // login failed
-          console.log("error: " + error);
-          dispatch(LoggedIn(false))
+        console.log("error: " + error);
+        dispatch(LoggedIn("false"))
       })
+    })
+    .catch(function(error){
+      console.log("error: " + error);
     })  
   }
-
-
- 
-
-
-  
-
-
-
-
-
-return (
+  return (
     <fieldset>
     <legend>Login:</legend>
       <FormContainer>
@@ -75,7 +61,7 @@ return (
             
       </FormContainer>    
     </fieldset>
-    );
+  );
 }
 
 /* 

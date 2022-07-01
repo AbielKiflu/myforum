@@ -1,11 +1,11 @@
-import {useNavigate} from "react-router-dom";
+//import {useNavigate} from "react-router-dom";
 import React,{useEffect} from 'react';
 import axios from 'axios';
 import {useDispatch} from 'react-redux';
 import {LoggedIn} from '../../redux/reducers/uiStateReducer';
 const Logout = (props) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  //const navigate = useNavigate();
   const [user,setUser] = React.useState(''); 
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const Logout = (props) => {
        
       })
       .then(response => {
-        dispatch(LoggedIn(false));
+        dispatch(LoggedIn("false"));
         setUser(response.data);
       })
       .catch(error => console.error(error));    

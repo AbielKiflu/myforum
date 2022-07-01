@@ -28,9 +28,9 @@ const Register = () => {
             }          
         })
         .then(response => {
-            dispatch(LoggedIn(true));
-            console.log(response.data.message);
-            navigate("/boards");
+            dispatch(LoggedIn("true"));
+            localStorage.setItem("user_id",response.data.id);
+            navigate("/");
         })
         .catch(function(error){
             console.log("error: " + error);

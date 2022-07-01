@@ -9,15 +9,13 @@ import {changeHamburger} from '../../redux/reducers/uiStateReducer'
 const NavBar = () => {
   const dispatch = useDispatch();
   const {hamburger,logged}=useSelector((state) =>state.uiState);
-
-
   const handleHamburger=(e)=>{
     dispatch(changeHamburger())
     
     }
 
     const menuItems=(logged)=>{
-      if(logged){
+      if(logged === "true"){
         return (
           <>  
             <NavItem>
