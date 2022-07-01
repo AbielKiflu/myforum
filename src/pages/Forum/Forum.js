@@ -2,15 +2,39 @@ import axios from 'axios';
 import React,{useEffect,useState} from 'react';
 import {TopicList} from '../../components';
 import {useParams} from 'react-router-dom';
-import {MainContainer,SideContainer,BodyContainer} from '../../globalStyle';
+import {MainContainer,SideContainer,BodyContainer,ColumnContainer} from '../../globalStyle';
 import {useSelector} from 'react-redux';
 import {Login,Register} from '../../components';
 import {Link} from 'react-router-dom';
+import styled from 'styled-components';
+
+
 //import AddTopic from '../../components/Topics/AddTopic';
 function Forum() {
   const [topics, setTopics] = useState([]);
   const {logged}=useSelector((state) =>state.uiState);
   const id = useParams();
+  const BtnLink=styled(Link)`
+    outline:none;
+ 
+    border-radius:0.5rem;
+    color:#fff;
+    text-decoration: none;
+    padding:0.4rem;
+    width:6rem;
+    margin:0.6rem;
+    background:#082a3d;
+
+    &:hover {
+        background:#33224f;
+    }
+    
+
+  `;
+
+
+
+
   useEffect(() => {
     axios({
       method:'get',
@@ -25,7 +49,7 @@ function Forum() {
   const menuItems=(logged)=>{
     if(logged === "true"){
       return (
-        <Link to={'/NewTopic/'+id.id} > Add a topic</Link>
+        <BtnLink to={'/NewTopic/'+id.id} > Add topic</BtnLink>
       );
     }
   }
@@ -42,9 +66,9 @@ function Forum() {
   return (
     <MainContainer>
 
-      <BodyContainer>     
+      <ColumnContainer>     
       <div>
-        <h3>{id.title}</h3>
+        <h2>{id.title}</h2>
         <p>{id.description}</p>
       </div>
         {menuItems(logged)}
@@ -53,9 +77,12 @@ function Forum() {
           <TopicList key={topic.topic_id} topic={topic}/>     
         );
       })}  
-      </BodyContainer>
+      </ColumnContainer>
       {menuItemsLogin(logged)}
     </MainContainer>
   );
 }
 export default Forum;
+
+
+
